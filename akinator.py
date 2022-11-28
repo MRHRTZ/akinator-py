@@ -90,7 +90,7 @@ class Akinator:
             timestamp = int(datetime.now().timestamp()) * 1000
             callback_string = self.jQuery + str(timestamp)
             req_answer = request.get(
-                f"https://id.akinator.com/answer_api?callback={callback_string}&urlApiWs={self.urlWs}&session={self.session}&signature={self.signature}&step={step}&frontaddr={self.frontaddr}&answer={answer}&question_filter=",
+                f"{self.base_url}/answer_api?callback={callback_string}&urlApiWs={self.urlWs}&session={self.session}&signature={self.signature}&step={step}&frontaddr={self.frontaddr}&answer={answer}&question_filter=",
                 headers=self.headers
             ).text
 
